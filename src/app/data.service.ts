@@ -9,7 +9,6 @@ import { Item } from './item';
 export class DataService {
 
   private url = 'http://localhost:3000/api/';
-
   constructor(private http: HttpClient) { }
 
   getShoppingItems() {
@@ -18,7 +17,7 @@ export class DataService {
       map(res => res));
   }
 
-  addShoppingItem(newItem: any) {
+  addShoppingItem(newItem: Item) {
     let headers = new HttpHeaders();
     headers.append('content-Type', 'application/json');
     return this.http
@@ -32,7 +31,7 @@ export class DataService {
       map(res => res));
   }
 
-  updateShoppingItem(newItem: any) {
+  updateShoppingItem(newItem: Item) {
     let headers = new HttpHeaders();
     headers.append('content-Type', 'application/json');
     return this.http
